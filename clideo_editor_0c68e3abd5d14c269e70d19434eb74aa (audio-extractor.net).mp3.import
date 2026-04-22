@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbl3hw6v2bi5y"
+path="res://.godot/imported/clideo_editor_0c68e3abd5d14c269e70d19434eb74aa (audio-extractor.net).mp3-4d1d6a2e3c68f0b999608db411eb5438.mp3str"
+
+[deps]
+
+source_file="res://clideo_editor_0c68e3abd5d14c269e70d19434eb74aa (audio-extractor.net).mp3"
+dest_files=["res://.godot/imported/clideo_editor_0c68e3abd5d14c269e70d19434eb74aa (audio-extractor.net).mp3-4d1d6a2e3c68f0b999608db411eb5438.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

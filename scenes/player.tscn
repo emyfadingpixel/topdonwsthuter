@@ -1,12 +1,59 @@
 [gd_scene format=3 uid="uid://sv0ctul68eim"]
 
 [ext_resource type="Script" uid="uid://ehkvm8qcfjot" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://ci4rf205hcc54" path="res://icon.svg" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cxf64e01vm2mc" path="res://assets/Content/Skins.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://c83tfo75q4nsb" path="res://assets/Content/Weapons.png" id="3_qhqgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
+radius = 141.0
+height = 282.0
 
 [node name="Player" type="CharacterBody2D" unique_id=178608862]
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2111529256]
-texture = ExtResource("2_qhqgy")
+[node name="Sprite" type="Node2D" parent="." unique_id=534821631]
+rotation = -1.5509224
+
+[node name="Corpo" type="Sprite2D" parent="Sprite" unique_id=1058031815]
+texture = ExtResource("2_g2els")
+region_enabled = true
+region_rect = Rect2(969, 1372, 198, 105)
+
+[node name="Mochila" type="Sprite2D" parent="Sprite" unique_id=43167846]
+position = Vector2(-1, -77)
+texture = ExtResource("2_g2els")
+region_enabled = true
+region_rect = Rect2(969, 1219, 198, 132)
+
+[node name="Braco Dir" type="Sprite2D" parent="Sprite" unique_id=2059321586]
+position = Vector2(-75.93771, 104.529724)
+rotation = -0.21488433
+texture = ExtResource("2_g2els")
+region_enabled = true
+region_rect = Rect2(1419, 1229, 103, 198)
+
+[node name="Braco Esq" type="Sprite2D" parent="Sprite" unique_id=1291082129]
+position = Vector2(48.494865, 125.06099)
+rotation = 0.15809515
+texture = ExtResource("2_g2els")
+region_enabled = true
+region_rect = Rect2(1599, 1212, 132, 242)
+
+[node name="Cabeca" type="Sprite2D" parent="Sprite" unique_id=852826969]
+texture = ExtResource("2_g2els")
+region_enabled = true
+region_rect = Rect2(1186, 1203, 164, 164)
+
+[node name="Weapon" type="Sprite2D" parent="Sprite" unique_id=1226867791]
+position = Vector2(-25.46312, 228.55112)
+rotation = -0.041953534
+texture = ExtResource("3_qhqgy")
+region_enabled = true
+region_rect = Rect2(130, 576, 60, 134)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1819107261]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_qhqgy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=906505061]
+zoom = Vector2(0.55, 0.55)
