@@ -19,12 +19,16 @@ func mover():
 	var direcao_jogador = (%Player.global_position - self.global_position).normalized()
 	
 	velocity = SPEED * direcao_jogador
+	
+
+func tomar_dano():
+	self.queue_free()
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g45jm"]
 radius = 10.087022
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=252646493]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=252646493 groups=["Inimigos"]]
 script = SubResource("GDScript_0b8xr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=67576576]

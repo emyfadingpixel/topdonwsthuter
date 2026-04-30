@@ -13,6 +13,12 @@ func _process(delta: float) -> void:
 	
 	position += velocidade * delta * direcao
 	
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Inimigos\"):
+		body.tomar_dano()
+		self.queue_free()
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ag3k0"]
@@ -73,3 +79,5 @@ frame_progress = 0.90807307
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1436906856]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_jk513")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
