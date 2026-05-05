@@ -3,7 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://sv0ctul68eim" path="res://scenes/player.tscn" id="1_ihpo2"]
 [ext_resource type="PackedScene" uid="uid://buma5em78ha16" path="res://inimigo.tscn" id="2_udkue"]
 
+[sub_resource type="GDScript" id="GDScript_ihpo2"]
+script/source = "extends Node2D
+
+@export var inimigo_cena: PackedScene
+
+func spawn_inimigo():
+	var novo_inimigo = inimigo_cena.instantiate()
+	
+	var rand_posX = randi_range(-400, 400)
+	var rand_posY = randi_range(-250, 250)
+	var posX = %Player.global_position.x + rand_posX
+	var posY = %Player.global_position.y + rand_posY
+	
+	while = true:
+		if abs(posX - %Player.global_position.x) > 100
+		and abs(posY - %Player)
+"
+
 [node name="Node2D" type="Node2D" unique_id=790072469]
+script = SubResource("GDScript_ihpo2")
 
 [node name="Player" parent="." unique_id=178608862 instance=ExtResource("1_ihpo2")]
 unique_name_in_owner = true
@@ -13,3 +32,5 @@ scale = Vector2(0.99544436, 1)
 [node name="CharacterBody2D" parent="." unique_id=252646493 instance=ExtResource("2_udkue")]
 position = Vector2(941, 440)
 scale = Vector2(3, 3)
+
+[node name="Timer" type="Timer" parent="." unique_id=1287281057]

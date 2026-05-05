@@ -23,10 +23,19 @@ func mover():
 
 func tomar_dano():
 	self.queue_free()
+
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"jogador\"):
+		body.tomar_dano()
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g45jm"]
 radius = 10.087022
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_030df"]
+size = Vector2(42, 39)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=252646493 groups=["Inimigos"]]
 script = SubResource("GDScript_0b8xr")
@@ -36,5 +45,15 @@ scale = Vector2(1.9057784, 1.5693862)
 shape = SubResource("CircleShape2D_g45jm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=523193719]
+position = Vector2(-0.99999994, 0)
 scale = Vector2(0.36957952, 0.35231352)
 texture = ExtResource("1_030df")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=209695188]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1812468561]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_030df")
+debug_color = Color(0.96485764, 0.1656897, 0.23950386, 0.41960785)
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

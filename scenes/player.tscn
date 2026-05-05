@@ -57,8 +57,5 @@ region_rect = Rect2(130, 576, 60, 134)
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_qhqgy")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=906505061]
-zoom = Vector2(0.55, 0.55)
-
 [node name="EmissorBala" type="Marker2D" parent="." unique_id=846725517]
 position = Vector2(280, 33)
