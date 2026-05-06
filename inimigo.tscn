@@ -10,13 +10,13 @@ const SPEED = 200.0
 @export var jogador:CharacterBody2D
 
 func _physics_process(delta: float) -> void:
-	if %Player:
+	if jogador:
 		mover()
 	
 	move_and_slide()
 
 func mover():
-	var direcao_jogador = (%Player.global_position - self.global_position).normalized()
+	var direcao_jogador = (jogador.global_position - self.global_position).normalized()
 	
 	velocity = SPEED * direcao_jogador
 	
@@ -25,9 +25,8 @@ func tomar_dano():
 	self.queue_free()
 
 
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.is_in_group(\"jogador\"):
+	if body.is_in_group(\"jogadores\"):
 		body.tomar_dano()
 "
 
@@ -35,7 +34,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 radius = 10.087022
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_030df"]
-size = Vector2(42, 39)
+size = Vector2(58, 55)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=252646493 groups=["Inimigos"]]
 script = SubResource("GDScript_0b8xr")

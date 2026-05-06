@@ -15,9 +15,15 @@ run/main_scene="uid://sv0ctul68eim"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 Inimigos=""
+jogadores=""
 
 [input]
 

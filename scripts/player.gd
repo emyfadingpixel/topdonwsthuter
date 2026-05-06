@@ -11,7 +11,7 @@ var direction = Vector2(0,0)
 
 # Importamos o nó EmissorBala de forma SEGURA com o onready, para capturar a posição do Emissor
 @onready var ponta_arma = $EmissorBala
-#@onready var som_tiro = $SomDoTiro
+@onready var som_tiro = $SomDeTiro
 
 func _physics_process(delta: float) -> void:
 	
@@ -32,6 +32,7 @@ func disparar():
 	var nova_bala = projetil.instantiate()
 	
 	# 2. Configura a bala (Posição, Direção e Rotação)
+	
 	nova_bala.global_position = ponta_arma.global_position
 	
 	# Usa o centro do jogador e a ponta da arma para gerar a direção do tiro
@@ -42,10 +43,10 @@ func disparar():
 	# 3. Adiciona a bala na fase atual
 	get_tree().current_scene.add_child(nova_bala)
 	
-	#som_tiro.play(1.0)
+	som_tiro.play()
 	#
 	#await get_tree().create_timer(0.1).timeout
-	#
+	
 	#som_tiro.stop()
 	
 	
@@ -61,5 +62,3 @@ func rotacionar_corpo():
 	
 func tomar_dano():
 	self.queue_free()
-	get_tree()
-	

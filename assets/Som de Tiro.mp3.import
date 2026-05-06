@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddcb8sb735fkx"
+path="res://.godot/imported/Som de Tiro.mp3-5d2a15409fede4f284d5c3b5fe7010dd.mp3str"
+
+[deps]
+
+source_file="res://assets/Som de Tiro.mp3"
+dest_files=["res://.godot/imported/Som de Tiro.mp3-5d2a15409fede4f284d5c3b5fe7010dd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

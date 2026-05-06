@@ -4,12 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://y8i8bwy1ys4l" path="res://bala.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://cxf64e01vm2mc" path="res://assets/Content/Skins.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://c83tfo75q4nsb" path="res://assets/Content/Weapons.png" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://ddcb8sb735fkx" path="res://assets/Som de Tiro.mp3" id="5_qlg0r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
 radius = 141.0
 height = 282.0
 
-[node name="Player" type="CharacterBody2D" unique_id=178608862]
+[node name="Player" type="CharacterBody2D" unique_id=178608862 groups=["jogadores"]]
 script = ExtResource("1_g2els")
 projetil = ExtResource("2_dqkch")
 
@@ -59,3 +60,11 @@ shape = SubResource("CapsuleShape2D_qhqgy")
 
 [node name="EmissorBala" type="Marker2D" parent="." unique_id=846725517]
 position = Vector2(280, 33)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=236865766]
+position = Vector2(2, 0)
+zoom = Vector2(0.5, 0.5)
+
+[node name="SomDeTiro" type="AudioStreamPlayer2D" parent="." unique_id=49502587]
+position = Vector2(0, -2)
+stream = ExtResource("5_qlg0r")
